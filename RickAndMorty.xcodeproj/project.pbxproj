@@ -11,6 +11,9 @@
 		4C649AE02A33DDA0006D2F81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C649ADF2A33DDA0006D2F81 /* ContentView.swift */; };
 		4C649AE22A33DDA2006D2F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C649AE12A33DDA2006D2F81 /* Assets.xcassets */; };
 		4C649AE52A33DDA2006D2F81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C649AE42A33DDA2006D2F81 /* Preview Assets.xcassets */; };
+		4CA3AD712A3414DC004BFD51 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 4CA3AD702A3414DC004BFD51 /* Apollo */; };
+		4CA3AD782A3419A9004BFD51 /* queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4CA3AD762A3419A9004BFD51 /* queries.graphql */; };
+		4CA3AD792A3419A9004BFD51 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CA3AD772A3419A9004BFD51 /* schema.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		4C649ADF2A33DDA0006D2F81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C649AE12A33DDA2006D2F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C649AE42A33DDA2006D2F81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CA3AD762A3419A9004BFD51 /* queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queries.graphql; sourceTree = "<group>"; };
+		4CA3AD772A3419A9004BFD51 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA3AD712A3414DC004BFD51 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,8 @@
 		4C649ADC2A33DDA0006D2F81 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				4CA3AD762A3419A9004BFD51 /* queries.graphql */,
+				4CA3AD772A3419A9004BFD51 /* schema.json */,
 				4C649ADD2A33DDA0006D2F81 /* RickAndMortyApp.swift */,
 				4C649ADF2A33DDA0006D2F81 /* ContentView.swift */,
 				4C649AE12A33DDA2006D2F81 /* Assets.xcassets */,
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = RickAndMorty;
+			packageProductDependencies = (
+				4CA3AD702A3414DC004BFD51 /* Apollo */,
+			);
 			productName = RickAndMorty;
 			productReference = 4C649ADA2A33DDA0006D2F81 /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 4C649AD12A33DDA0006D2F81;
+			packageReferences = (
+				4CA3AD6F2A3414DC004BFD51 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 4C649ADB2A33DDA0006D2F81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,7 +139,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA3AD792A3419A9004BFD51 /* schema.json in Resources */,
 				4C649AE52A33DDA2006D2F81 /* Preview Assets.xcassets in Resources */,
+				4CA3AD782A3419A9004BFD51 /* queries.graphql in Resources */,
 				4C649AE22A33DDA2006D2F81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4CA3AD6F2A3414DC004BFD51 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CA3AD702A3414DC004BFD51 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4CA3AD6F2A3414DC004BFD51 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C649AD22A33DDA0006D2F81 /* Project object */;
 }
