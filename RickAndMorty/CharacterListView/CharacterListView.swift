@@ -15,8 +15,9 @@ struct CharacterListView: View {
         NavigationView {
             VStack {
                 List(characters, id: \.id){ character in
-                    //AsyncImage(url: URL(string: character?.image ?? "https://rickandmorty.com/api/character/avatar/1.jpeg")!)
-                    Text(character.name ?? "")
+                    NavigationLink(destination: CharacterDetailView(idCharacter: character.id ?? "1")){
+                        Text(character.name ?? "")
+                    }
                 }
             }
             .navigationTitle("Personajes")
