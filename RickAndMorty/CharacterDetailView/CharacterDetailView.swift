@@ -19,11 +19,16 @@ struct CharacterDetailView: View {
                 if character?.image == nil {
                     ProgressView()
                 } else {
-                    Image(systemName: "person.fill")
-                        .data(url: URL(string: character?.image ?? "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!)
-                        .frame(width: 150, height: 150)
-                        .clipped()
-                        .clipShape(Circle())
+                    AsyncImage(url: URL(string: character?.image ?? "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!) { phase in
+                        if let image = phase.image {
+                            image
+                        } else if phase.error != nil {
+                            Image(systemName: "person.fill")
+                        }
+                    }
+                    .frame(width: 300, height: 300)
+                    .clipped()
+                    .clipShape(Circle())
                     Text(character?.name ?? "").font(.title)
                     Text(character?.status ?? "")
                     Text(character?.species ?? "")
