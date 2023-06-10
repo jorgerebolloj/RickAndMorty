@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CharacterListView: View {
     
     @State private var characters = [CharactersListQuery.Data.Characters.Result]()
     
@@ -15,6 +15,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 List(characters, id: \.id){ character in
+                    //AsyncImage(url: URL(string: character?.image ?? "https://rickandmorty.com/api/character/avatar/1.jpeg")!)
                     Text(character.name ?? "")
                 }
             }

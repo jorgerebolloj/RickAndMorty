@@ -7,3 +7,15 @@ query charactersList {
     }
   }
 }
+
+query characterDetail($id: ID!) {
+  character(id: $id){
+    name
+    status
+    species
+    type
+    gender
+    image
+    created
+  }
+}
