@@ -16,6 +16,12 @@ struct CharacterListView: View {
             VStack {
                 List(characters, id: \.id){ character in
                     NavigationLink(destination: CharacterDetailView(idCharacter: character.id ?? "1")){
+                        /*Image(systemName: "persona.fill")
+                            .data(url: URL(string: character?.image ?? "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!)*/
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 100, weight: .bold))
+                            .font(.largeTitle)
+                            .clipShape(Circle())
                         Text(character.name ?? "")
                     }
                 }
