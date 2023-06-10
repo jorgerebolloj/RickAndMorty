@@ -10,5 +10,7 @@ import Apollo
 
 class ApolloManager {
     static var shared = ApolloManager()
-    lazy var apolloManager = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql")!)
+    lazy var apollo = ApolloClient(url: URL(string: "https://rickandmortyapi.com/graphql")!)
+    
+    private init(){}
 }
