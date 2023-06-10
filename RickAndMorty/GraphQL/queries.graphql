@@ -3,7 +3,6 @@ query charactersList {
     results{
       id
       name
-      image
     }
   }
 }
@@ -16,6 +15,5 @@ query characterDetail($id: ID!) {
     type
     gender
     image
-    created
   }
 }

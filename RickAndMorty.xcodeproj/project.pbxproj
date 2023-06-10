@@ -147,8 +147,8 @@
 		4C649ADC2A33DDA0006D2F81 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				4C06B1132A3444A000845B61 /* Extensions */,
 				4C649ADD2A33DDA0006D2F81 /* RickAndMortyApp.swift */,
+				4C06B1132A3444A000845B61 /* Extensions */,
 				4C06B0F62A342CEF00845B61 /* Sources */,
 				4CA3AD7A2A341C75004BFD51 /* GraphQL */,
 				4C06B10A2A34393100845B61 /* CharacterListView */,
