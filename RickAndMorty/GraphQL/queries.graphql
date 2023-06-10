@@ -1,9 +1,21 @@
-query characters {
+query charactersList {
   characters{
     results{
       id
       name
       image
     }
+  }
+}
+
+query characterDetail($id: ID!) {
+  character(id: $id){
+    name
+    status
+    species
+    type
+    gender
+    image
+    created
   }
 }
