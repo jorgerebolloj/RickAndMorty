@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
-    
     var idCharacter: String
-    @State private var character: CharacterDetailQuery.Data.Character?
+    @StateObject private var character = CharacterDetailViewModel()
     
     var body: some View {
         ZStack{
             Color.mint.ignoresSafeArea()
             VStack{
-                if character?.image == nil {
+                if character.character?.image == nil {
                     ProgressView()
                 } else {
-                    AsyncImage(url: URL(string: character?.image ?? "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!) { phase in
+                    AsyncImage(url: URL(string: character.character?.image ?? "https://rickandmortyapi.com/api/character/avatar/1.jpeg")!) { phase in
                         if let image = phase.image {
                             image
                         } else if phase.error != nil {
@@ -29,25 +28,17 @@ struct CharacterDetailView: View {
                     .frame(width: 300, height: 300)
                     .clipped()
                     .clipShape(Circle())
-                    Text(character?.name ?? "").font(.title)
-                    Text(character?.status ?? "")
-                    Text(character?.species ?? "")
-                    Text(character?.type ?? "")
-                    Text(character?.gender ?? "")
+                    Text(character.character?.name ?? "").font(.title)
+                    Text(character.character?.status ?? "")
+                    Text(character.character?.species ?? "")
+                    Text(character.character?.type ?? "")
+                    Text(character.character?.gender ?? "")
                 }
             }
         }
-        .onAppear {
-            ApolloManager.shared.apollo.fetch(query: CharacterDetailQuery(id: idCharacter)){ result in
-                switch result {
-                case .success(let graphql):
-                    DispatchQueue.main.async {
-                        character = graphql.data?.character
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
+        .onAppear(){
+            character.characterId = idCharacter
+            character.fecthCharacterDetail()
         }
     }
 }
