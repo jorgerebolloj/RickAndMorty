@@ -156,11 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				4C649ADD2A33DDA0006D2F81 /* RickAndMortyApp.swift */,
+				4C9991AC2A402BDE00097770 /* Modules */,
 				4C06B1132A3444A000845B61 /* Extensions */,
-				4C06B0F62A342CEF00845B61 /* Sources */,
 				4CA3AD7A2A341C75004BFD51 /* GraphQL */,
-				4C06B10A2A34393100845B61 /* CharacterListView */,
-				4C06B10D2A343D0000845B61 /* CharacterDetailView */,
 				4C649AE12A33DDA2006D2F81 /* Assets.xcassets */,
 				4C649AE32A33DDA2006D2F81 /* Preview Content */,
 				4CD5C8002A345EB30072CD20 /* LaunchScreen.storyboard */,
@@ -176,12 +174,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4C9991AB2A402BA000097770 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4CA3AD7B2A341CAA004BFD51 /* ApolloManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		4C9991AC2A402BDE00097770 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4C06B10A2A34393100845B61 /* CharacterListView */,
+				4C06B10D2A343D0000845B61 /* CharacterDetailView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		4CA3AD7A2A341C75004BFD51 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				4C9991AB2A402BA000097770 /* Manager */,
 				4CA3AD762A3419A9004BFD51 /* queries.graphql */,
 				4CA3AD772A3419A9004BFD51 /* schema.json */,
-				4CA3AD7B2A341CAA004BFD51 /* ApolloManager.swift */,
+				4C06B0F62A342CEF00845B61 /* Sources */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
